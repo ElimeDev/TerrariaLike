@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "TileMap.h"
 
 class Game
 {
@@ -11,6 +12,6 @@ public:
 	void run();
 
 private:
-	sf::RenderWindow window;
+	sf::RenderWindow m_window;
 };
 
