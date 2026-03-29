@@ -1,0 +1,36 @@
+{
+  "width": 4,
+  "height": 4,
+  "tilesize": 18,
+  "tileset": "assets/tileset/tileset.png",
+
+  "tile_defs": [
+    {
+      "solid": false,
+      "tx": 0,
+      "ty": 0
+    },
+    {
+      "solid": true,
+      "tx": 1,
+      "ty": 0
+    },
+    {
+      "solid": true,
+      "tx": 2,
+      "ty": 0
+    },
+    {
+      "solid": false,
+      "tx": 0,
+      "ty": 1
+    }
+  ],
+
+  "tiles": [
+    [ 1, 1, 1, 1 ],
+    [ 1, 0, 3, 1 ],
+    [ 1, 3, 0, 1 ],
+    [ 1, 1, 1, 1 ]
+  ]
+}

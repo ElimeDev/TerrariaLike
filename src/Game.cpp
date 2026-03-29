@@ -2,8 +2,9 @@
 
 using namespace sf;
 
-Game::Game() : m_window(sf::VideoMode(800, 600), "TerrariaLike")
+Game::Game() : m_window(sf::VideoMode(810, 612), "TerrariaLike", sf::Style::Titlebar | sf::Style::Close)
 {
+	
 }
 
 Game::~Game()
@@ -25,7 +26,7 @@ void Game::run()
 
 		m_window.clear(Color::Black);
 
-		//draw here
+		
 
 		m_window.display();
 	}

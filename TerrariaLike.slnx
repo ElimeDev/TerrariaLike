@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="TerrariaLike.vcxproj" />
+  <Project Path="TerrariaLike.vcxproj" Id="1619fd96-dda8-4e33-a758-df75a04d1774" />
 </Solution>
