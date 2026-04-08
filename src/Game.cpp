@@ -1,10 +1,13 @@
 #include "Game.h"
+#include <string>
 
 using namespace sf;
 
+const std::string TILEMAP_FILEPATH = "data/TileMap.json";
+
 Game::Game() : m_window(sf::VideoMode(810, 612), "TerrariaLike", sf::Style::Titlebar | sf::Style::Close)
 {
-	
+	m_tilemap.load(TILEMAP_FILEPATH);
 }
 
 Game::~Game()
@@ -26,7 +29,7 @@ void Game::run()
 
 		m_window.clear(Color::Black);
 
-		
+		m_window.draw(m_tilemap);
 
 		m_window.display();
 	}

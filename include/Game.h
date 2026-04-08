@@ -13,5 +13,6 @@ public:
 
 private:
 	sf::RenderWindow m_window;
+	TileMap m_tilemap;
 };
 

@@ -20,7 +20,7 @@ public:
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-    int m_width, m_height, m_tileSize;
+    int m_width, m_height, m_tilesize;
     std::vector<std::vector<Tile>> m_tiles;
     sf::VertexArray m_vertices;
     sf::Texture m_tileset;

@@ -1,7 +1,9 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 struct Tile
 {
-	int textureID;
+	sf::Vector2i textureID;
 	bool isSolid;
 };
