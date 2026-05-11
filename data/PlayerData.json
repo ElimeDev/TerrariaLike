@@ -1,0 +1,33 @@
+{
+  "movement": {
+    "speed": 7.5,
+    "jump_force": 12
+  },
+
+  "render": {
+    "texture": "assets/textures/player.png",
+    "sprite_size": 18
+  },
+
+  "animation": {
+    "animation_speed":  1,
+    "walk_right": [
+      [ 0, 0 ],
+      [ 1, 0 ],
+      [ 2, 0 ],
+      [ 3, 0 ]
+    ],
+    "walk_left": [
+      [ 0, 1 ],
+      [ 1, 1 ],
+      [ 2, 1 ],
+      [ 3, 1 ]
+    ],
+    "jump": [
+      [ 1, 0 ]
+    ],
+    "fall": [
+      [ 3, 0 ]
+    ]
+  }
+}

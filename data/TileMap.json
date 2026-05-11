@@ -2,7 +2,7 @@
   "width": 20,
   "height": 12,
   "tilesize": 18,
-  "tileset": "assets/tileset/tileset.png",
+  "tileset": "assets/textures/tileset.png",
 
   "tile_defs": [
     {
