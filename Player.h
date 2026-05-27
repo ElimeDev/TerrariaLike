@@ -4,13 +4,13 @@
 #include <string>
 
 
-class Player
+class Player : public sf::Drawable, public sf::Transformable
 {
 public:
 	Player(std::string dataPath);
 
 private:
-
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	int m_speed;
 	int m_jumpForce;
