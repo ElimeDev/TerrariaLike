@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "include/Input.h"
+#include "Input.h"
 
 
 class Player : public sf::Drawable, public sf::Transformable

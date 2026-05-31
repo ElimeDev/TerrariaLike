@@ -139,19 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Input.h" />
     <ClInclude Include="include\json.hpp" />
+    <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Tile.h" />
     <ClInclude Include="include\TileMap.h" />
-    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\PlayerData.json" />
