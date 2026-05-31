@@ -3,7 +3,7 @@
 //Constructeur
 Input::Input()
 {
-    button.left = button.right = button.up = button.down = button.attack = button.escape = false;
+    button.left = button.right = button.jump = button.attack = button.escape = false;
 }
 
 // Fonction qui accede à button (struc) et nous donne l'info private
@@ -35,11 +35,8 @@ void Input::InputHandler(Event event, RenderWindow& window)
         case Keyboard::D:
             button.right = true;
             break;
-        case Keyboard::S:
-            button.down = true;
-            break;
         case Keyboard::Z:
-            button.up = true;
+            button.jump = true;
             break;
         case Keyboard::Space:
             button.attack = true;
@@ -62,11 +59,8 @@ void Input::InputHandler(Event event, RenderWindow& window)
         case Keyboard::D:
             button.right = false;
             break;
-        case Keyboard::S:
-            button.down = false;
-            break;
         case Keyboard::Z:
-            button.up = false;
+            button.jump = false;
             break;
         case Keyboard::Space:
             button.attack = false;
