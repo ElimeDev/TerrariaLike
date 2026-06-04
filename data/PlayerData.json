@@ -6,7 +6,7 @@
 
   "render": {
     "texture": "assets/textures/player.png",
-    "sprite_size": 18
+    "sprite_size": 32
   },
 
   "animation": {

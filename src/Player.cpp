@@ -26,7 +26,7 @@ void Player::load(std::string dataPath)
         data["animation"].contains("jump") and
         data["animation"].contains("fall")))
     {
-        std::cerr << "Erreur : Fichier JSON invalide - champs requis manquants" << std::endl;
+        throw std::runtime_error("[Entity] JSON invalide : champs requis manquants");
         return;
     }
 
@@ -35,13 +35,21 @@ void Player::load(std::string dataPath)
 	m_spriteSize = data["render"]["sprite_size"];
 	m_animationSpeed = data["animation"]["animation_speed"];
     m_animations = data["animation"];
+	m_active_animation = m_animations["idle"];
+
+	m_timeCounter = 0;
+	m_frameCounter = 0;
 
     if (!m_texture.loadFromFile(data["render"]["texture"]))
     {
-        std::cerr << "Erreur : Echec de chargement de la texture '" << data["render"]["texture"] << "'" << std::endl;
+        throw std::runtime_error("Erreur : Echec de chargement de la texture");
         return;
     }
 	m_sprite.setTexture(m_texture);
+	m_sprite.setTextureRect(IntRect(m_active_animation[m_frameCounter][0].get<int>(),
+        m_active_animation[m_frameCounter][1].get<int>(),
+        m_active_animation[m_frameCounter][0].get<int>() + m_spriteSize,
+        m_active_animation[m_frameCounter][1].get<int>() + m_spriteSize));
 }
 
 void Player::setPosition(sf::Vector2i pos)
@@ -55,11 +63,16 @@ sf::Vector2i Player::getPosition() const
 	return m_position;
 }
 
-void Player::update(Input& input)
+void Player::update(float deltaTime, Input& input)
 {
+    animate(deltaTime);
 }
 
 void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(m_sprite, states);
+}
+
+void Player::animate(float deltaTime)
+{
 }

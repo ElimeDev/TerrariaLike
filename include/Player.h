@@ -15,18 +15,25 @@ public:
 
 	sf::Vector2i getPosition() const;
 
-	void update(Input& input);
+	void update(float deltaTime, Input& input);
 
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+	void animate(float deltaTime);
+
 	int m_speed;
 	int m_jumpForce;
+	sf::Vector2i m_position;
+
 	int m_spriteSize;
-	int m_animationSpeed; //en sec
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
-	sf::Vector2i m_position;
+
+	int m_animationSpeed; //en sec
+	int m_timeCounter;
+	int m_frameCounter;
 	nlohmann::json m_animations;
+	nlohmann::json m_active_animation;
 };
 
