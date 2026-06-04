@@ -1,7 +1,6 @@
 #include "Player.h"
 #include <iostream>
 #include <fstream>
-#include "json.hpp"
 
 using namespace sf;
 using namespace std;
@@ -35,6 +34,7 @@ void Player::load(std::string dataPath)
     m_jumpForce = data["movement"]["jump_force"];
 	m_spriteSize = data["render"]["sprite_size"];
 	m_animationSpeed = data["animation"]["animation_speed"];
+    m_animations = data["animation"];
 
     if (!m_texture.loadFromFile(data["render"]["texture"]))
     {

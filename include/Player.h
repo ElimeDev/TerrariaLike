@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Input.h"
+#include "json.hpp"
 
 
 class Player : public sf::Drawable, public sf::Transformable
@@ -26,5 +27,6 @@ private:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
 	sf::Vector2i m_position;
+	nlohmann::json m_animations;
 };
 
