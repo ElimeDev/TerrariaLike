@@ -23,11 +23,12 @@ void Game::run()
 		Event event;
 		while (m_window.pollEvent(event))
 		{
-			if (event.type == Event::Closed)
-			{
-				m_window.close();
-			}
+			m_input.InputHandler(event, m_window);
 		}
+
+		m_deltaTime = m_clock.restart().asSeconds();
+
+		m_player.update(m_deltaTime, m_input);
 
 		m_window.clear(Color::Black);
 

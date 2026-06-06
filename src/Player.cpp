@@ -46,10 +46,12 @@ void Player::load(std::string dataPath)
         return;
     }
 	m_sprite.setTexture(m_texture);
-	m_sprite.setTextureRect(IntRect(m_active_animation[m_frameCounter][0].get<int>(),
-        m_active_animation[m_frameCounter][1].get<int>(),
-        m_active_animation[m_frameCounter][0].get<int>() + m_spriteSize,
-        m_active_animation[m_frameCounter][1].get<int>() + m_spriteSize));
+	m_sprite.setTextureRect(IntRect(
+		m_active_animation[m_frameCounter][0].get<int>() * m_spriteSize,
+		m_active_animation[m_frameCounter][1].get<int>() * m_spriteSize,
+		m_spriteSize,
+		m_spriteSize
+	));
 }
 
 void Player::setPosition(sf::Vector2i pos)
@@ -75,4 +77,16 @@ void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Player::animate(float deltaTime)
 {
+	m_timeCounter += deltaTime;
+	if (m_timeCounter >= m_animationSpeed)
+	{
+		m_timeCounter = 0;
+		m_frameCounter = (m_frameCounter + 1) % m_active_animation.size();
+		m_sprite.setTextureRect(IntRect(
+			m_active_animation[m_frameCounter][0].get<int>() * m_spriteSize,
+			m_active_animation[m_frameCounter][1].get<int>() * m_spriteSize,
+			m_spriteSize,
+			m_spriteSize
+		));
+	}
 }

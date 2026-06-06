@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "TileMap.h"
 #include "Player.h"
+#include "Input.h"
 
 class Game
 {
@@ -14,6 +15,11 @@ public:
 
 private:
 	sf::RenderWindow m_window;
+	Input m_input;
+
+	sf::Clock m_clock; //pr calculer delta time
+	float m_deltaTime;
+
 	TileMap m_tilemap;
 	Player m_player;
 };

@@ -30,8 +30,8 @@ private:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
 
-	int m_animationSpeed; //en sec
-	int m_timeCounter;
+	float m_animationSpeed; //en sec
+	float m_timeCounter;
 	int m_frameCounter;
 	nlohmann::json m_animations;
 	nlohmann::json m_active_animation;
