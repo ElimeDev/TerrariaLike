@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 #include "TileMap.h"
 #include "Player.h"
 #include "Input.h"
@@ -8,7 +9,7 @@
 class Game
 {
 public:
-	Game();
+	Game(std::string levelPath);
 	~Game();
 	
 	void run();

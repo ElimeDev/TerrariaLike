@@ -1,12 +1,11 @@
 #include "Game.h"
-#include <string>
 
 using namespace sf;
 
 const std::string TILEMAP_FILEPATH = "data/TileMap.json";
 const std::string PLAYER_DATA_FILEPATH = "data/PlayerData.json";
 
-Game::Game() : m_window(sf::VideoMode(810, 612), "TerrariaLike", sf::Style::Titlebar | sf::Style::Close)
+Game::Game(std::string levelPath) : m_window(sf::VideoMode(810, 612), "TerrariaLike", sf::Style::Titlebar | sf::Style::Close), m_deltaTime(0.f)
 {
 	m_tilemap.load(TILEMAP_FILEPATH);
 	m_player.load(PLAYER_DATA_FILEPATH);

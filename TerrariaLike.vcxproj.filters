@@ -30,6 +30,9 @@
     <ClCompile Include="src\Player.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h">
@@ -50,9 +53,13 @@
     <ClInclude Include="include\Player.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="include\GameManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\PlayerData.json" />
     <None Include="data\TileMap.json" />
+    <None Include="data\levels\Level1.json" />
   </ItemGroup>
 </Project>

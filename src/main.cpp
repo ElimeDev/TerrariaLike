@@ -1,9 +1,8 @@
-#include "Game.h"
+#include "GameManager.h"
 
 int main ()
 {
-	Game game;
-	game.run();
+	GameManager gameManager;
 	
 	return 0;
 }

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameManager.cpp" />
     <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Player.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\GameManager.h" />
     <ClInclude Include="include\Input.h" />
     <ClInclude Include="include\json.hpp" />
     <ClInclude Include="include\Player.h" />
@@ -154,6 +156,7 @@
     <ClInclude Include="include\TileMap.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\levels\Level1.json" />
     <None Include="data\PlayerData.json" />
     <None Include="data\TileMap.json" />
   </ItemGroup>

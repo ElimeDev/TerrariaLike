@@ -1,0 +1,5 @@
+{
+  "title": "Level 1",
+  "tilemap": "data/TileMap.json",
+  "player_data": "data/PlayerData.json"
+}
