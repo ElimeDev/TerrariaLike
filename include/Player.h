@@ -11,9 +11,9 @@ class Player : public sf::Drawable, public sf::Transformable
 public:
 	void load(std::string dataPath);
 
-	void setPosition(sf::Vector2i pos);
+	void setPosition(sf::Vector2f pos);
 
-	sf::Vector2i getPosition() const;
+	sf::Vector2f getPosition() const;
 
 	void update(float deltaTime, Input& input);
 
@@ -24,7 +24,8 @@ private:
 
 	int m_speed;
 	int m_jumpForce;
-	sf::Vector2i m_position;
+	sf::Vector2f m_position;
+	sf::Vector2f m_velocity;
 
 	int m_spriteSize;
 	sf::Sprite m_sprite;

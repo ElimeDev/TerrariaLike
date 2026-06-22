@@ -6,6 +6,8 @@ using namespace sf;
 using namespace std;
 using json = nlohmann::json;
 
+const float GRAVITY = 9.8f;
+
 void Player::load(std::string dataPath)
 {
     ifstream f(dataPath);
@@ -54,13 +56,13 @@ void Player::load(std::string dataPath)
 	));
 }
 
-void Player::setPosition(sf::Vector2i pos)
+void Player::setPosition(sf::Vector2f pos)
 {
     m_position = pos;
     m_sprite.setPosition(static_cast<sf::Vector2f>(pos)); // Update sprite position
 }
 
-sf::Vector2i Player::getPosition() const
+sf::Vector2f Player::getPosition() const
 {
 	return m_position;
 }
@@ -68,6 +70,11 @@ sf::Vector2i Player::getPosition() const
 void Player::update(float deltaTime, Input& input)
 {
     animate(deltaTime);
+
+    m_velocity.y += GRAVITY * deltaTime;
+    m_position += m_velocity * deltaTime;
+
+    m_sprite.setPosition(static_cast<sf::Vector2f>(m_position));
 }
 
 void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const
