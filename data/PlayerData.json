@@ -1,6 +1,6 @@
 {
   "movement": {
-    "speed": 7.5,
+    "speed": 40,
     "jump_force": 12
   },
 

@@ -7,7 +7,7 @@ Input::Input()
 }
 
 // Fonction qui accede à button (struc) et nous donne l'info private
-Input::Button Input::GetButton(void) const
+Input::Button Input::getButton(void) const
 {
     return button;
 }

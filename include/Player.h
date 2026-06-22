@@ -4,10 +4,17 @@
 #include <string>
 #include "Input.h"
 #include "json.hpp"
+#include "TileMap.h"
 
 
 class Player : public sf::Drawable, public sf::Transformable
 {
+	struct InputAction
+	{
+		int dir;
+		bool jump;
+	};
+
 public:
 	void load(std::string dataPath);
 
@@ -15,17 +22,21 @@ public:
 
 	sf::Vector2f getPosition() const;
 
-	void update(float deltaTime, Input& input);
+	void update(float deltaTime, Input& input, TileMap& tilemap);
 
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	void animate(float deltaTime);
+	InputAction handle_input(Input& input);
+	void resolveCollisionsX(TileMap& tilemap);
+	void resolveCollisionsY(TileMap& tilemap);
 
 	int m_speed;
 	int m_jumpForce;
 	sf::Vector2f m_position;
 	sf::Vector2f m_velocity;
+	bool m_onGround = false;
 
 	int m_spriteSize;
 	sf::Sprite m_sprite;

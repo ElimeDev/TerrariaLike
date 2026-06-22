@@ -12,7 +12,7 @@ public:
     // prototype du constructeur
     Input();
     //Proto Getbtn
-    Button GetButton(void) const;
+    Button getButton(void) const;
     //proto
     void InputHandler(Event event, RenderWindow& window);
 

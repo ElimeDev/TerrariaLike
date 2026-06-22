@@ -28,7 +28,7 @@ void Game::run()
 
 		m_deltaTime = m_clock.restart().asSeconds();
 
-		m_player.update(m_deltaTime, m_input);
+		m_player.update(m_deltaTime, m_input, m_tilemap);
 
 		m_window.clear(Color::Black);
 
