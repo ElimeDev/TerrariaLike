@@ -1,14 +1,15 @@
 #include "Game.h"
+#include "json.hpp"
+#include <fstream>
 
 using namespace sf;
 
-const std::string TILEMAP_FILEPATH = "data/TileMap.json";
-const std::string PLAYER_DATA_FILEPATH = "data/PlayerData.json";
-
 Game::Game(std::string levelPath) : m_window(sf::VideoMode(810, 612), "TerrariaLike", sf::Style::Titlebar | sf::Style::Close), m_deltaTime(0.f)
 {
-	m_tilemap.load(TILEMAP_FILEPATH);
-	m_player.load(PLAYER_DATA_FILEPATH);
+	std::ifstream f(levelPath);
+	nlohmann::json data = nlohmann::json::parse(f);
+	m_tilemap.load(data["tilemap"]);
+	m_player.load(data["player_data"]);
 }
 
 Game::~Game()

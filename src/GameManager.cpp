@@ -7,6 +7,9 @@ const std::string LEVELS_PATH = "data/levels";
 
 GameManager::GameManager() : m_levelList(getLevelList(LEVELS_PATH)), m_activeGame(nullptr)
 {
+	//a changer temporaire
+	Game game("data/levels/Level1.json");
+	game.run();
 }
 
 std::vector<std::string> GameManager::getLevelList(std::string levelsPath)
